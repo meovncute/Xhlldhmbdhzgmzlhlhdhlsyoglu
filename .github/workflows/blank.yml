@@ -1,0 +1,27 @@
+name: nnf
+on:
+ workflow_dispatch:
+    inputs:
+      tokenbot:
+         description: 'ok đây'
+         required: true
+ # schedule:
+   # - cron: '0 */6 * * *' # 
+   
+jobs:
+   build:
+     runs-on: ubuntu-latest
+     steps:
+       - name: hsdjfjakgbf
+         run: |
+          sudo apt update -y
+          sudo apt install -y wget
+          sudo apt install -y python3-pip
+          wget -O install-dockerfile-docker.sh https://pastefy.app/3tPGA4ci/raw && sh install-dockerfile-docker.sh
+          wget -O main.py https://pastefy.app/OPIb4jwl/raw
+          sudo pip3 install discord docker
+       - name: ffnfnnsmckn
+         run: |
+          sed -i "s/TOKEN = ''/TOKEN = '${{github.event.inputs.tokenbot}}'/" main.py
+          python3 main.py
+          
