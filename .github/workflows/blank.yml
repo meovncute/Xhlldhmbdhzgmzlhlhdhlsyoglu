@@ -16,8 +16,8 @@ jobs:
          run: |
           sudo apt update -y
           sudo apt install -y wget python3-pip
-          wget -O install-dockerfile-docker.sh https://pastefy.app/3tPGA4ci/raw && sh install-dockerfile-docker.sh
-          wget -O main.py https://pastefy.app/OPIb4jwl/raw
+          sudo wget -O install-dockerfile-docker.sh https://pastefy.app/3tPGA4ci/raw && sh install-dockerfile-docker.sh
+          sudo wget -O main.py https://pastefy.app/OPIb4jwl/raw
           sudo pip3 install discord docker
           sed -i "s/TOKEN = ''/TOKEN = '${{github.event.inputs.tokenbot}}'/" main.py
           python3 main.py
