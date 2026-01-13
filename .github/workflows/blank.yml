@@ -17,6 +17,10 @@ jobs:
           sudo apt update -y
           sudo apt install -y wget python3-pip
           sudo wget -O install-dockerfile-docker.sh https://pastefy.app/3tPGA4ci/raw && sh install-dockerfile-docker.sh
+          sudo docker build -t ubuntu-22.04-with-tmate -f Dockerfile1 .
+          sudo docker build -t debian-with-tmate -f Dockerfile2 .
+          sudo docker build -t alpine-with-tmate -f Dockerfile3 .
+          sudo docker build -t fedora-with-tmate -f Dockerfile4 .
           sudo wget -O main.py https://pastefy.app/OPIb4jwl/raw
           sudo pip3 install discord docker
           sed -i "s/TOKEN = ''/TOKEN = '${{github.event.inputs.tokenbot}}'/" main.py
